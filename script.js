@@ -62,3 +62,18 @@ document.addEventListener('fullscreenchange', () => {
         document.querySelector('.container').classList.remove('fullscreen');
     }
 });
+
+
+// Rain effect script
+function createRain() {
+  const rainContainer = document.getElementById('rain');
+  for (let i = 0; i < 100; i++) {
+    const rainDrop = document.createElement('div');
+    rainDrop.classList.add('rain-drop');
+    rainDrop.style.left = `${Math.random() * 100}vw`;
+    rainDrop.style.animationDuration = `${Math.random() * 2 + 1}s`;
+    rainContainer.appendChild(rainDrop);
+  }
+}
+
+window.onload = createRain;
